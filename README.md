@@ -1,6 +1,8 @@
 # Sample Android app
 
-MVI Kotlin & Jetpack Compose
+With MVI Kotlin & Jetpack Compose
 
 # Links
-- https://github.com/arkivanov/MVIKotlin
+
+- [MVI Kotlin](https://github.com/arkivanov/MVIKotlin)
+- [Jetpack Compose](https://developer.android.com/jetpack/compose)
