@@ -4,14 +4,18 @@ plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
 android {
     namespace = "com.aldolyna.mvikotlincompose"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.aldolyna.mvikotlincompose"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
@@ -30,18 +34,11 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.3"
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
     packaging {
         resources {
