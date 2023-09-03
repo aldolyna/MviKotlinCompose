@@ -10,24 +10,18 @@ kotlin {
 }
 
 android {
-    namespace = "com.aldolyna.mvikotlincompose.mvi"
+    namespace = "com.aldolyna.mvikotlincompose.ui"
     compileSdk = libs.versions.android.api.compile.get().toInt()
 
     defaultConfig {
         minSdk = libs.versions.android.api.min.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
-    buildFeatures {
-        buildConfig = true
-    }
 }
 
 dependencies {
-    implementation(projects.core.common)
+
     implementation(libs.core.ktx)
-    implementation(libs.bundles.lifecycle)
-    implementation(libs.bundles.mvikotlin)
     implementation(libs.bundles.dagger)
     ksp(libs.bundles.dagger.ksp)
 }

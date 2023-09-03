@@ -9,7 +9,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.aldolyna.mvikotlincompose.compose"
+    namespace = "com.aldolyna.mvikotlincompose.ui"
     compileSdk = libs.versions.android.api.compile.get().toInt()
 
     defaultConfig {
@@ -19,9 +19,6 @@ android {
 }
 
 dependencies {
-
+    implementation(projects.core.common)
     implementation(libs.core.ktx)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
-    androidTestImplementation(libs.espresso.core)
 }

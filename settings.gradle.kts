@@ -15,8 +15,12 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MviKotlinCompose"
+
 include(
     ":app",
+    ":core:common",
     ":core:mvi",
-    ":core:compose"
+    ":core:ui"
 )
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
