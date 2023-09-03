@@ -5,6 +5,7 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -14,4 +15,8 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "MviKotlinCompose"
-include(":app")
+include(
+    ":app",
+    ":core:mvi",
+    ":core:compose"
+)

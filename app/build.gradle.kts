@@ -5,29 +5,26 @@ plugins {
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain(libs.versions.java.get().toInt())
 }
 
 android {
     namespace = "com.aldolyna.mvikotlincompose"
-    compileSdk = 34
+    compileSdk = libs.versions.android.api.compile.get().toInt()
 
     defaultConfig {
         applicationId = "com.aldolyna.mvikotlincompose"
-        minSdk = 26
-        targetSdk = 34
+        minSdk = libs.versions.android.api.min.get().toInt()
+        targetSdk = compileSdk
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -38,7 +35,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.3"
+        kotlinCompilerExtensionVersion = libs.versions.compose.kotlin.get()
     }
     packaging {
         resources {
