@@ -8,7 +8,6 @@ compose-kotlin = "1.5.3"
 # Plugin Versions
 agp = "8.1.1"
 kotlin = "1.9.10"
-ksp = "1.9.10-1.0.13"
 
 # Library Versions
 androidx-core = "1.10.1"
@@ -61,10 +60,10 @@ dagger-android-processor = { module = "com.google.dagger:dagger-android-processo
 com-android-application = { id = "com.android.application", version.ref = "agp" }
 com-android-library = { id = "com.android.library", version.ref = "agp" }
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 
 [bundles]
 lifecycle = ["lifecycle-runtime-ktx", "lifecycle-runtime-compose", "lifecycle-viewmodel-ktx", "lifecycle-viewmodel-compose"]
 mvikotlin = ["mvikotlin-core", "mvikotlin-main", "mvikotlin-logging", "mvikotlin-coroutines"]
 dagger = ["dagger-core", "dagger-android"]
-
+dagger-processor = ["dagger-compiler", "dagger-android-processor"]

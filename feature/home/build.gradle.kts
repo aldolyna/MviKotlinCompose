@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
-    alias(libs.plugins.com.google.devtools.ksp)
+    alias(libs.plugins.org.jetbrains.kotlin.kapt)
 }
 
 kotlin {
@@ -43,8 +43,7 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.bundles.mvikotlin)
     implementation(libs.bundles.dagger)
-    ksp(libs.dagger.compiler)
-    ksp(libs.dagger.android.processor)
+    kapt(libs.bundles.dagger.processor)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)

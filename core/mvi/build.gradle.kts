@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
-    alias(libs.plugins.com.google.devtools.ksp)
+    alias(libs.plugins.org.jetbrains.kotlin.kapt)
 }
 
 kotlin {
@@ -26,7 +26,7 @@ android {
     }
     packaging {
         resources {
-            excludes += "/META-INF/**"
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 }
@@ -37,6 +37,5 @@ dependencies {
     implementation(libs.bundles.lifecycle)
     implementation(libs.bundles.mvikotlin)
     implementation(libs.bundles.dagger)
-    ksp(libs.dagger.compiler)
-    ksp(libs.dagger.android.processor)
+    kapt(libs.bundles.dagger.processor)
 }
