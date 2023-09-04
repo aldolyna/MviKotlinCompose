@@ -39,17 +39,3 @@ fun <Label : Any> CollectLabelsOnLifecycleLaunchedEffect(
         }
     }
 }
-
-@Composable
-fun <Intent : Any> AcceptOnLifecycleLaunchedEffect(
-    viewModel: MviViewModel<Intent, *, *, *>,
-    state: Lifecycle.State = Lifecycle.State.STARTED,
-    intent: Intent
-) {
-    val lifecycle = LocalLifecycleOwner.current.lifecycle
-    LaunchedEffect(Unit) {
-        lifecycle.repeatOnLifecycle(state) {
-            viewModel.accept(intent)
-        }
-    }
-}
