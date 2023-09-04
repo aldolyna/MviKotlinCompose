@@ -17,9 +17,17 @@ android {
         minSdk = libs.versions.android.api.min.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildFeatures {
+        compose = true
         buildConfig = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.kotlin.get()
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/**"
+        }
     }
 }
 
@@ -29,5 +37,6 @@ dependencies {
     implementation(libs.bundles.lifecycle)
     implementation(libs.bundles.mvikotlin)
     implementation(libs.bundles.dagger)
-    ksp(libs.bundles.dagger.ksp)
+    ksp(libs.dagger.compiler)
+    ksp(libs.dagger.android.processor)
 }

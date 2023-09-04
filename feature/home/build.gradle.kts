@@ -1,6 +1,6 @@
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.com.android.application)
+    alias(libs.plugins.com.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.com.google.devtools.ksp)
 }
@@ -10,26 +10,12 @@ kotlin {
 }
 
 android {
-    namespace = "com.aldolyna.mvikotlincompose"
+    namespace = "com.aldolyna.mvikotlincompose.home"
     compileSdk = libs.versions.android.api.compile.get().toInt()
 
     defaultConfig {
-        applicationId = "com.aldolyna.mvikotlincompose"
         minSdk = libs.versions.android.api.min.get().toInt()
-        targetSdk = compileSdk
-        versionCode = 1
-        versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            isMinifyEnabled = true
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
     }
     buildFeatures {
         compose = true
@@ -40,18 +26,15 @@ android {
     }
     packaging {
         resources {
-            excludes += "/META-INF/**"
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
 }
 
 dependencies {
     implementation(projects.core.common)
-    implementation(projects.core.mvi)
-    implementation(projects.core.ui)
-    implementation(projects.feature.home)
     implementation(libs.core.ktx)
-    implementation(libs.lifecycle.runtime.ktx)
+    implementation(libs.bundles.lifecycle)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)

@@ -17,7 +17,7 @@ androidx-activity = "1.7.2"
 compose-bom = "2023.08.00"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.1.5"
-androidx-test-espresso = "3.5.1"
+androidx-test-espresso = "3.6.0-alpha01"
 mvikotlin = "3.2.1"
 dagger = "2.48"
 
@@ -67,5 +67,4 @@ com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" 
 lifecycle = ["lifecycle-runtime-ktx", "lifecycle-runtime-compose", "lifecycle-viewmodel-ktx", "lifecycle-viewmodel-compose"]
 mvikotlin = ["mvikotlin-core", "mvikotlin-main", "mvikotlin-logging", "mvikotlin-coroutines"]
 dagger = ["dagger-core", "dagger-android"]
-dagger-ksp = ["dagger-compiler", "dagger-android-processor"]
 

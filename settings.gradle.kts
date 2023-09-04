@@ -20,7 +20,8 @@ include(
     ":app",
     ":core:common",
     ":core:mvi",
-    ":core:ui"
+    ":core:ui",
+    "feature:home"
 )
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
