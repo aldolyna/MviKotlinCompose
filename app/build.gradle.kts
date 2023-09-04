@@ -46,10 +46,6 @@ android {
 }
 
 dependencies {
-    implementation(projects.core.common)
-    implementation(projects.core.mvi)
-    implementation(projects.core.ui)
-    implementation(projects.feature.home)
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
